@@ -1,0 +1,18 @@
+# Visual Studio folders
+.vs/
+x64/
+Debug/
+Release/
+
+# Visual Studio user files
+*.vcxproj.user
+
+# Build outputs
+*.exe
+*.ilk
+*.pdb
+*.obj
+
+# OS files
+Thumbs.db
+.DS_Store
