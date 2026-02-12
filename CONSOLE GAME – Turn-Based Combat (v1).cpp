@@ -1,117 +1,47 @@
 ﻿// CONSOLE GAME – Turn-Based Combat (v1).cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
-#include <iostream>
-#include <cstdlib> // For system("pause")
-#include <string> // For string handling
-#define NOMINMAX // To prevent Windows headers from defining min and max macros that can interfere with std::min and std::max
-#include <windows.h> // For Sleep function
-#include <thread> // For std::this_thread::sleep_for
-#include <chrono> // For std::chrono::milliseconds
-#include <conio.h> // For _getch()
-#include <limits> // For std::numeric_limits
+#include <iostream> // For standard input and output (e.g., std::cout, std::cin)
+#include <cstdlib> // For system commands like system("pause") or system("cls")
+#include "typeText.h" // For the typeText function to display text with delay
+#include "showIntro.h" // For displaying the game introduction
+#include "getName.h" // For getting the player's name
+#include "firstCombat.h" // For displaying first combat introduction
+#include "globals.h" // Include the header file for global variables
 
+// Global variable
 
-void typeText(const std::string& text, int delayMs = 60)
-{
-	bool skip = false;
+// Player name
+std::string playerName; 
 
-	for (size_t i = 0; i < text.length(); ++i)
-	{
-		// Check if a key was pressed during the typing effect
-		if (!skip && _kbhit())
-		{
-			int key = _getch(); // Consume the key (does not go to std::cin)
+// Player stats
+int playerHealth = 0;
+int playerAttack = 0;
+int maxHP = 0;
+int healthAmount = 0;
+int DefenseValue = 0;
 
-			// If Enter was pressed, skip the typing effect
-			if (key == '\r')
-			{
-				skip = true;
-			}
-		}
+// Enemy stats
+int enemyHealth = 0;
+int enemyAttack = 0;
 
-		if (skip)
-		{
-			// Print the rest of the text instantly
-			std::cout << text.substr(i);
-			break;
-		}
-		else
-		{
-			// Print characters one by one with delay
-			std::cout << text[i];
-			std::this_thread::sleep_for(std::chrono::milliseconds(delayMs));
-		}
-	}
-
-	std::cout << '\n';
-}
-
-
+// Another variable
+int turnNumber = 0;
 
 int main()
-{
-	std::cout << "Combat Text RPG Game" << std::endl; // Game title
-	std::cout << "Press Enter to continue...";
-	std::cin.get();
-	system("cls");
+{	
+	// Show the game title and introduction
+	showIntro(); 
 
-	// Introduction
-
-	typeText("Welcome, brave knight.");
-
-	typeText("You have entered a dark forest,");
-	typeText("a place crawling with ruthless orcs.");
-
-	typeText("Many have tried to pass through...");
-	typeText("none have returned.");
-
-	typeText("Tell me your name,");
-	typeText("so I may remember who dares to become a legend.");
-	std::cout << std::endl; // Add an extra line for spacing
-	system("cls");
-
-	// Get player's name
-	std::string playerName;
-	while(playerName.empty())
-	{
-		typeText("Enter your name: ");
-		std::getline(std::cin, playerName);
-		if (playerName.empty())
-		{
-			typeText("Name cannot be empty. Please try again.");
-		}
-		
-	}
+	// Get the player's name
+	playerName = getName();
 	
-	// Introduction to combat
-	typeText("Despite all the warnings,");
-	typeText(playerName + " steps into the forest.");
-	typeText("The trees grow silent.");
-	typeText("The air feels heavy.");
-	typeText("Suddenly, a starving orc emerges from the shadows.");
-	typeText("Its eyes burn with hunger.");
-	typeText("It's time to fight!");
-	std::cin.get();
-	system("cls");
-
-
-	// Player stats
-	int playerHealth = 100;
-	int playerAttack = 20;
-	int maxHP = 100;
-	int healthAmount = 40;
-	int DefenseValue = 0;
-
-	// Enemy stats
-	int enemyHealth = 200;
-	int enemyAttack = 15;
-
-	// Another variable
-	int turnNumber = 1;
+	// Clear the screen before continuing
+	system("cls"); 
 	
+	// Introduction to first combat
+	firstCombat();
 	
-
 	// Combat loop
 	while (playerHealth > 0 && enemyHealth > 0)
 		{
@@ -125,7 +55,7 @@ int main()
 		std::cout << "Orc HP: " << enemyHealth << std::endl;
 
 		// Player Turn
-		std::cout << "Choose action:" << std::endl << "[1] Attack - Deal 20 damage" << std::endl << "[2] Defend - Take no damage this turn" << std::endl << "[3] [3] Heal - Restore 40 HP" << std::endl;
+		std::cout << "Choose action:" << std::endl << "[1] Attack - Deal 20 damage" << std::endl << "[2] Defend - Take no damage this turn" << std::endl << "[3] Heal - Restore 40 HP" << std::endl;
 		std::cout << "Press 1,2 or 3: ";
 
 		// Get player input
@@ -178,7 +108,6 @@ int main()
 			// Reset defense after enemy turn so it only lasts one enemy attack
 			DefenseValue = 0;
 			typeText("Press Enter to continue...");
-			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 			std::cin.get();
 			system("cls");
 
@@ -199,7 +128,6 @@ int main()
 	}
 
 	typeText("Press Enter to exit...");
-	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 	std::cin.get();
 	return 0;
 }

@@ -18,5 +18,40 @@
     <ClCompile Include="CONSOLE GAME – Turn-Based Combat (v1).cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="typeText.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="showIntro.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="getName.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="firstCombat.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="enemy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="typeText.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="showIntro.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="getName.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="firstCombat.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="globals.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="enemy.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
