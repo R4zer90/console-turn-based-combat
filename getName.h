@@ -1,6 +1,4 @@
 #pragma once
+#include <string>
 
-#include "typeText.h" // For the typeText function to display text with delay
-
-
-std::string getName(); // Declare the function that returns a string
+std::string getName();

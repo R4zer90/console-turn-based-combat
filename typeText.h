@@ -1,4 +1,4 @@
 #pragma once
-#include <string> // For string handling
+#include <string>
 
 void typeText(const std::string& text, int delayMs = 60);

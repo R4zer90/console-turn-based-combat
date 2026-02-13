@@ -1,5 +1,7 @@
-#include <iostream> // For standard input and output (e.g., std::cout, std::cin)
-#include "typeText.h" // For the typeText function to display text with delay
+#include <iostream>
+#include <string>
+#include "getName.h"
+#include "typeText.h"
 
 std::string getName() 
 {

@@ -1,8 +1,9 @@
-#include <iostream> // For standard input and output (e.g., std::cout, std::cin)
-#include <thread>	// For std::this_thread::sleep_for
-#include <chrono> // For std::chrono::milliseconds
-#include <conio.h> // For _getch()
-#include <cstddef> // For size_t type used in loops
+#include <iostream>
+#include <thread>
+#include <chrono>
+#include <conio.h>
+#include <cstddef>
+#include "typeText.h"
 
 void typeText(const std::string& text, int delayMs)
 {

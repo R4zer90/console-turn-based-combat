@@ -1,16 +1,13 @@
 ﻿// CONSOLE GAME – Turn-Based Combat (v1).cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
-#include <iostream> // For standard input and output (e.g., std::cout, std::cin)
-#include <cstdlib> // For system commands like system("pause") or system("cls")
-#include "typeText.h" // For the typeText function to display text with delay
-#include "showIntro.h" // For displaying the game introduction
-#include "getName.h" // For getting the player's name
-#include "firstCombat.h" // For displaying first combat introduction
-#include "globals.h" // Include the header file for global variables
-#include "enemy.h" // Include the header for the Enemy structure
+#include <iostream>
+#include <cstdlib>
+#include "typeText.h"
+#include "showIntro.h"
+#include "getName.h"
+#include "firstCombat.h"
 #include "player.h"
-#include "combat.h"
 
 
 int main()

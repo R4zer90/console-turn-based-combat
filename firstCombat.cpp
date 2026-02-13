@@ -1,10 +1,11 @@
-#include <iostream> // For standard input and output (e.g., std::cout, std::cin) 
-#include "typeText.h" // For the typeText function to display text with delay
-#include "globals.h" // Include the header file for global variables
-#include "enemy.h"	// Include the header for the Enemy structure
-#include <cstdlib>  // For rand() and srand()
-#include <ctime>  // For time(0)
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include "firstCombat.h"
+#include "enemy.h"
+#include "player.h"
 #include "combat.h"
+#include "typeText.h"
 
 void firstCombat()
 {

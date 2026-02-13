@@ -1,9 +1,9 @@
-#include <iostream>   // For standard input and output (std::cout, std::cin)
-#include <cstdlib>    // For functions like rand() and system("cls")
-#include "combat.h"   // Include the header for the combat loop function declaration
-#include "typeText.h" // Include the function for displaying text with a typing effect
+#include <iostream>
+#include <cstdlib>
+#include "combat.h"
 #include "player.h"
 #include "enemy.h"
+#include "typeText.h"
 
 
 void combat(int attackMin, int attackMax)
