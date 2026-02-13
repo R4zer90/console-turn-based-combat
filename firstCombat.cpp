@@ -26,8 +26,6 @@ void firstCombat()
 	typeText("The trees grow silent.");
 	typeText("The air feels heavy.");
 	typeText("Suddenly, a " + currentEnemy.name + " emerges from the shadows.");
-	typeText("Its eyes burn with hunger.");
-	typeText("It's time to fight!");
 	std::cin.get();
 	system("cls");
 

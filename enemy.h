@@ -1,10 +1,11 @@
 #pragma once
-
 #include <string>
 
-// Struct representing an enemy character in the game
 struct Enemy {
-    std::string name;    // Enemy's name
-    int health;           // Enemy's health
-    int attack;           // Enemy's attack power
+    std::string name;
+    int health;
 };
+
+// global enemy variables
+extern Enemy currentEnemy;
+extern Enemy enemies[3];

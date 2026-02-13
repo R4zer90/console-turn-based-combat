@@ -127,6 +127,7 @@
     <ClCompile Include="CONSOLE GAME – Turn-Based Combat (v1).cpp" />
     <ClCompile Include="enemy.cpp" />
     <ClCompile Include="firstCombat.cpp" />
+    <ClCompile Include="player.cpp" />
     <ClCompile Include="typeText.cpp" />
     <ClCompile Include="showIntro.cpp" />
     <ClCompile Include="getName.cpp" />
@@ -135,7 +136,7 @@
     <ClInclude Include="combat.h" />
     <ClInclude Include="enemy.h" />
     <ClInclude Include="firstCombat.h" />
-    <ClInclude Include="globals.h" />
+    <ClInclude Include="player.h" />
     <ClInclude Include="typeText.h" />
     <ClInclude Include="showIntro.h" />
     <ClInclude Include="getName.h" />

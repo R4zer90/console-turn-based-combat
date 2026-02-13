@@ -36,6 +36,9 @@
     <ClCompile Include="combat.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="player.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="typeText.h">
@@ -50,13 +53,13 @@
     <ClInclude Include="firstCombat.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="globals.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="enemy.h">
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="combat.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="player.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

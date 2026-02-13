@@ -9,19 +9,9 @@
 #include "firstCombat.h" // For displaying first combat introduction
 #include "globals.h" // Include the header file for global variables
 #include "enemy.h" // Include the header for the Enemy structure
+#include "player.h"
 #include "combat.h"
 
-// Global variable
-
-// Player name
-std::string playerName; 
-
-// Player stats
-int playerHealth = 200;
-int playerAttack = 20;
-int maxHP = 200;
-int healthAmount = 40;
-int DefenseValue = 0;
 
 int main()
 {	
