@@ -1,21 +1,19 @@
 #pragma once
 
 #include <string>
+#include "enemy.h"  // Include the definition of the Enemy structure
 
-// Global variable
+// Global variables
 
-// Player name
+// Player name and stats
 extern std::string playerName;
-// Player stats
 extern int playerHealth;
 extern int playerAttack;
 extern int maxHP;
 extern int healthAmount;
 extern int DefenseValue;
 
-// Enemy stats
-extern int enemyHealth;
-extern int enemyAttack;
+// Enemy data
+extern Enemy currentEnemy;
+extern Enemy enemies[3];
 
-// Another variable
-extern int turnNumber;

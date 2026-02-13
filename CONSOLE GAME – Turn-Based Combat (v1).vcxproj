@@ -123,6 +123,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="combat.cpp" />
     <ClCompile Include="CONSOLE GAME – Turn-Based Combat (v1).cpp" />
     <ClCompile Include="enemy.cpp" />
     <ClCompile Include="firstCombat.cpp" />
@@ -131,6 +132,7 @@
     <ClCompile Include="getName.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="combat.h" />
     <ClInclude Include="enemy.h" />
     <ClInclude Include="firstCombat.h" />
     <ClInclude Include="globals.h" />
