@@ -129,6 +129,7 @@
     <ClCompile Include="firstCombat.cpp" />
     <ClCompile Include="player.cpp" />
     <ClCompile Include="secondCombat.cpp" />
+    <ClCompile Include="thirdCombat.cpp" />
     <ClCompile Include="typeText.cpp" />
     <ClCompile Include="showIntro.cpp" />
     <ClCompile Include="getName.cpp" />
@@ -139,6 +140,7 @@
     <ClInclude Include="firstCombat.h" />
     <ClInclude Include="player.h" />
     <ClInclude Include="secondCombat.h" />
+    <ClInclude Include="thirdCombat.h" />
     <ClInclude Include="typeText.h" />
     <ClInclude Include="showIntro.h" />
     <ClInclude Include="getName.h" />

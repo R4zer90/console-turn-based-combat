@@ -1,35 +1,49 @@
+// ====================
+// INCLUDES
+// ====================
 #include <iostream>
 #include <cstdlib>
+#include <limits>
+#include <string>
+
 #include "combat.h"
 #include "player.h"
 #include "enemy.h"
 #include "typeText.h"
-#include <limits>
-#include "player.h"
 
 
-void combat(int attackMin, int attackMax)
+
+
+bool combat(int attackMin, int attackMax)
 {		
+	// ====================
+	// COMBAT SETUP
+	// ====================
 	int turnNumber = 1;
 	int DefenseValue = 0;
 	
+	// ====================
+	// COMBAT LOOP
+	// ====================
 	while (playerHealth > 0 && currentEnemy.health > 0)
 	{
-
-		// Turn number display
-		std::cout << "Turn:" << turnNumber << std::endl;
-
-		// Stats display
+		
+		// ====================
+		// TURN INFO
+		// ====================
+		std::cout << "Turn: " << turnNumber << std::endl;
 		std::cout << playerName << " Health: " << playerHealth << std::endl;
 		std::cout << currentEnemy.name << " HP: " << currentEnemy.health << std::endl;
 
-		// Player Turn
-		std::cout << "Choose action:" << std::endl << "[1] Attack - Deal 20 damage" << std::endl << "[2] Defend - Take no damage this turn" << std::endl << "[3] Heal - Restore 40 HP" << std::endl;
+		// ====================
+		// PLAYER TURN
+		// ====================
+		std::cout << "Choose action:" << std::endl
+			<< "[1] Attack - Deal " << playerAttack << " damage" << std::endl
+			<< "[2] Defend - Take no damage this turn" << std::endl
+			<< "[3] Heal - Restore " << (maxHP / 4) << " HP" << std::endl;
 		std::cout << "Press 1,2 or 3: ";
-
-		// Get player input
 		int choice;
-
 		std::cin >> choice;
 		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
@@ -64,46 +78,50 @@ void combat(int attackMin, int attackMax)
 			break;
 		}
 
-		// Enemy Turn
-		if (currentEnemy.health > 0) // Check if enemy is still alive before it attacks
+		// ====================
+		// ENEMY TURN
+		// ====================
+		if (currentEnemy.health > 0) 
 		{
-			int enemyRoll = std::rand() % (attackMax - attackMin + 1) + attackMin;
-			int damageDealt = enemyRoll - DefenseValue;
-
-			// If player fully defended (damageDealt <= 0) show friendly message and do no damage
-			if (damageDealt <= 0)
+			int enemyRoll = std::rand() % (attackMax - attackMin + 1) + attackMin; // Enemy attack roll
+			int damageDealt = enemyRoll - DefenseValue;				
+			if (damageDealt <= 0) // Defense check
 			{
-				// Player took no damage because they defended
 				std::cout << "Great! You defended the attack and took no damage!" << std::endl;
 			}
 			else
 			{
-				// Normal damage application
 				playerHealth -= damageDealt;
 				std::cout << "The " << currentEnemy.name << " attacks you for " << damageDealt << " damage!" << std::endl;
 			}
 
-			// Reset defense after enemy turn so it only lasts one enemy attack
-			DefenseValue = 0;
-			typeText("Press Enter to continue...");
+			DefenseValue = 0; // Reset defense (1 turn only)
+			typeText("Press Enter to continue..."); // Pause before next turn
 			std::cin.get();
 			system("cls");
 
 		}
+		// Next turn
 		system("cls");
 		turnNumber++;
 	}
+
+	// ====================
+	// END OF COMBAT
+	// ====================
 	if (playerHealth <= 0)
 	{
 		typeText("Defeat...");
-		typeText("The orc has crushed you. Better luck next time.");
+		typeText("The " + currentEnemy.name + " has crushed you. Better luck next time.");
+		return false;
 	}
 	else
 	{
 		typeText("Victory!");
-		typeText("The orc collapses to the ground.");
+		typeText("The " + currentEnemy.name + " collapses to the ground.");
 		typeText("You have survived the forest... for now.");
 
+		// Post-combat upgrade
 		int oldAtk = playerAttack;
 		int oldMaxHP = maxHP;
 
@@ -113,5 +131,8 @@ void combat(int attackMin, int attackMax)
 		typeText("Max HP: " + std::to_string(oldMaxHP) + " -> " + std::to_string(maxHP));
 		typeText("Press Enter to continue...");
 		std::cin.get();
+		system("cls");
+		return true;
+		
 	}
 }

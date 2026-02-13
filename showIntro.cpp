@@ -1,16 +1,23 @@
+// ====================
+// GAME INTRO
+// ====================
 #include "showIntro.h"
 #include "typeText.h"
 #include <iostream>
 
 void showIntro() 
 {
-    // Game title
+    // ====================
+    // TITLE SCREEN
+    // ====================
     std::cout << "Combat Text RPG Game" << std::endl;
     std::cout << "Press Enter to continue...";
     std::cin.get();
     system("cls");
 
-    // Introduction
+    // ====================
+    // INTRO NARRATION
+    // ====================
     typeText("Welcome, brave knight.");
     typeText("You have entered a dark forest,");
     typeText("a place crawling with ruthless orcs.");

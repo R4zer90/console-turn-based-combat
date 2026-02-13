@@ -1,2 +1,2 @@
 #pragma once
-void secondCombat();
+bool secondCombat();
