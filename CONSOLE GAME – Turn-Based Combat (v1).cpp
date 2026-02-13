@@ -8,10 +8,14 @@
 #include "getName.h"
 #include "firstCombat.h"
 #include "player.h"
+#include "secondCombat.h"
+#include <ctime>
 
 
 int main()
 {	
+	std::srand(static_cast<unsigned int>(std::time(0)));
+
 	// Show the game title and introduction
 	showIntro(); 
 
@@ -24,6 +28,7 @@ int main()
 	// Introduction to first combat
 	firstCombat();
 
+	secondCombat();
 
 
 	typeText("Press Enter to exit...");

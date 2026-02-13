@@ -9,9 +9,6 @@
 
 void firstCombat()
 {
-	// Initialize random seed
-	std::srand(static_cast<unsigned int>(std::time(0)));
-
 	// Randomly select an enemy from the array
 	int enemyIndex = std::rand() % 3;
 
@@ -22,11 +19,12 @@ void firstCombat()
 	int attackMax = 15;
 
 	// Introduction to first combat 
-	typeText("Despite all the warnings,");
-	typeText(playerName + " steps into the forest.");
-	typeText("The trees grow silent.");
-	typeText("The air feels heavy.");
+	typeText("Despite every warning, you keep walking.");
+	typeText(playerName + " disappears between the trees.");
+	typeText("No birds. No wind.");
+	typeText("Only your breath… and the crunch of leaves.");
 	typeText("Suddenly, a " + currentEnemy.name + " emerges from the shadows.");
+	typeText(currentEnemy.introText);
 	std::cin.get();
 	system("cls");
 

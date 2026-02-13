@@ -4,6 +4,7 @@
 struct Enemy {
     std::string name;
     int health;
+    std::string introText; 
 };
 
 // global enemy variables

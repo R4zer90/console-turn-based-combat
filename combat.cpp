@@ -4,13 +4,15 @@
 #include "player.h"
 #include "enemy.h"
 #include "typeText.h"
+#include <limits>
+#include "player.h"
 
 
 void combat(int attackMin, int attackMax)
 {		
 	int turnNumber = 1;
 	int DefenseValue = 0;
-
+	
 	while (playerHealth > 0 && currentEnemy.health > 0)
 	{
 
@@ -27,7 +29,10 @@ void combat(int attackMin, int attackMax)
 
 		// Get player input
 		int choice;
+
 		std::cin >> choice;
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
 		switch (choice)
 		{
 		case 1: // Attack
@@ -36,18 +41,23 @@ void combat(int attackMin, int attackMax)
 			break;
 
 		case 2: // Defend
-			DefenseValue = 30;
+			DefenseValue = 9999;
 			std::cout << "You defend against the enemy's attack!" << std::endl;
 			break;
 
-		case 3: // Heal		
-			playerHealth += healthAmount;
+		case 3: // Heal
+		{
+			int healValue = maxHP / 4;
+			playerHealth += healValue;
+
 			if (playerHealth > maxHP)
 			{
 				playerHealth = maxHP;
 			}
-			std::cout << "You heal yourself for " << healthAmount << " health!" << std::endl;
+
+			std::cout << "You heal yourself for " << healValue << " health!" << std::endl;
 			break;
+		}
 
 		default:
 			std::cout << "Invalid choice! Please choose 1, 2, or 3." << std::endl;
@@ -70,7 +80,7 @@ void combat(int attackMin, int attackMax)
 			{
 				// Normal damage application
 				playerHealth -= damageDealt;
-				std::cout << "The orc attacks you for " << damageDealt << " damage!" << std::endl;
+				std::cout << "The " << currentEnemy.name << " attacks you for " << damageDealt << " damage!" << std::endl;
 			}
 
 			// Reset defense after enemy turn so it only lasts one enemy attack
@@ -91,7 +101,17 @@ void combat(int attackMin, int attackMax)
 	else
 	{
 		typeText("Victory!");
-		typeText("The starving orc collapses to the ground.");
+		typeText("The orc collapses to the ground.");
 		typeText("You have survived the forest... for now.");
+
+		int oldAtk = playerAttack;
+		int oldMaxHP = maxHP;
+
+		applyPostCombatUpgrade();
+		typeText("You feel stronger after the fight.");
+		typeText("Attack: " + std::to_string(oldAtk) + " -> " + std::to_string(playerAttack));
+		typeText("Max HP: " + std::to_string(oldMaxHP) + " -> " + std::to_string(maxHP));
+		typeText("Press Enter to continue...");
+		std::cin.get();
 	}
 }
