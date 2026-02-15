@@ -17,9 +17,48 @@ A small console-based turn-based combat game created as a C++ learning project.
 - strings and input handling (cin / getline)
 - functions
 - basic game state management
+- basic multi-file project structure (headers / source files)
 
-## How to run
-- Open and run in Visual Studio (Windows)
+## Project structure
+```
+console-turn-based-combat/
+├── include/
+├── src/
+├── CMakeLists.txt
+└── README.md
+```
+
+## Build & Run (CMake)
+
+### Requirements
+- CMake 3.20+
+- C++ compiler (MSVC / GCC / Clang)
+
+### Build (Debug)
+```bash
+cmake -S . -B build
+cmake --build build
+```
+
+### Run (Debug)
+```bash
+./build/Debug/ConsoleTurnBasedCombat
+```
+
+### Build (Release)
+```bash
+cmake --build build --config Release
+```
+
+### Run (Release)
+```bash
+./build/Release/ConsoleTurnBasedCombat
+```
+
+> On Linux/macOS the output path may differ depending on the generator.
+
+## How to run (Visual Studio)
+- Open the `.sln` file and run the project
 - Recommended: Start Without Debugging (Ctrl + F5)
 
 ## Notes
