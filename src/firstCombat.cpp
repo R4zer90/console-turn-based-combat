@@ -8,6 +8,7 @@
 #include "player.h"
 #include "combat.h"
 #include "typeText.h"
+#include "consoleUtils.h"
 
 bool firstCombat()
 {
@@ -34,7 +35,7 @@ bool firstCombat()
 	typeText("Suddenly, a " + currentEnemy.name + " emerges from the shadows.");
 	typeText(currentEnemy.introText);
 	std::cin.get();
-	system("cls");
+	clearScreen();
 
 	// ====================
 	// START COMBAT

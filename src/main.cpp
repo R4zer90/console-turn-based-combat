@@ -14,6 +14,7 @@
 #include <ctime>
 #include "thirdCombat.h"
 #include "enemy.h"
+#include "consoleUtils.h"
 
 
 int main()
@@ -29,7 +30,7 @@ int main()
 	// ====================
 	showIntro(); 
 	playerName = getName();
-	system("cls"); 
+	clearScreen();
 	
 	// ====================
 	// COMBAT SEQUENCE

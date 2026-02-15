@@ -8,6 +8,7 @@
 #include "player.h"
 #include "combat.h"
 #include "typeText.h"
+#include "consoleUtils.h"
 
 bool thirdCombat()
 {   
@@ -33,7 +34,7 @@ bool thirdCombat()
     typeText("It's a " + currentEnemy.name + ".");
     typeText(currentEnemy.introText);
     std::cin.get();
-    system("cls");
+    clearScreen();
 
     // ====================
     // START COMBAT

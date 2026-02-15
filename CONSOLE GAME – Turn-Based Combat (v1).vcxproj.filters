@@ -45,6 +45,9 @@
     <ClCompile Include="src\typeText.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\consoleUtils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\combat.h">
@@ -72,6 +75,9 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="include\typeText.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\consoleUtils.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

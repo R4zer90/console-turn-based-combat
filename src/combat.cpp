@@ -10,6 +10,7 @@
 #include "player.h"
 #include "enemy.h"
 #include "typeText.h"
+#include "consoleUtils.h"
 
 
 
@@ -98,11 +99,11 @@ bool combat(int attackMin, int attackMax)
 			DefenseValue = 0; // Reset defense (1 turn only)
 			typeText("Press Enter to continue..."); // Pause before next turn
 			std::cin.get();
-			system("cls");
+			clearScreen();
 
 		}
 		// Next turn
-		system("cls");
+		clearScreen();
 		turnNumber++;
 	}
 
@@ -131,7 +132,7 @@ bool combat(int attackMin, int attackMax)
 		typeText("Max HP: " + std::to_string(oldMaxHP) + " -> " + std::to_string(maxHP));
 		typeText("Press Enter to continue...");
 		std::cin.get();
-		system("cls");
+		clearScreen();
 		return true;
 		
 	}

@@ -4,6 +4,7 @@
 #include "showIntro.h"
 #include "typeText.h"
 #include <iostream>
+#include "consoleUtils.h"
 
 void showIntro() 
 {
@@ -13,7 +14,7 @@ void showIntro()
     std::cout << "Combat Text RPG Game" << std::endl;
     std::cout << "Press Enter to continue...";
     std::cin.get();
-    system("cls");
+    clearScreen();
 
     // ====================
     // INTRO NARRATION
