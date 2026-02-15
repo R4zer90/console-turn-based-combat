@@ -15,63 +15,63 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CONSOLE GAME – Turn-Based Combat (v1).cpp">
+    <ClCompile Include="src\combat.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="typeText.cpp">
+    <ClCompile Include="src\enemy.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="showIntro.cpp">
+    <ClCompile Include="src\firstCombat.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="getName.cpp">
+    <ClCompile Include="src\getName.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="firstCombat.cpp">
+    <ClCompile Include="src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="enemy.cpp">
+    <ClCompile Include="src\player.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="combat.cpp">
+    <ClCompile Include="src\secondCombat.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="player.cpp">
+    <ClCompile Include="src\showIntro.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="secondCombat.cpp">
+    <ClCompile Include="src\thirdCombat.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="thirdCombat.cpp">
+    <ClCompile Include="src\typeText.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="typeText.h">
+    <ClInclude Include="include\combat.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="showIntro.h">
+    <ClInclude Include="include\enemy.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="getName.h">
+    <ClInclude Include="include\firstCombat.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="firstCombat.h">
+    <ClInclude Include="include\getName.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="enemy.h">
+    <ClInclude Include="include\player.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="combat.h">
+    <ClInclude Include="include\secondCombat.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="player.h">
+    <ClInclude Include="include\showIntro.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="secondCombat.h">
+    <ClInclude Include="include\thirdCombat.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="thirdCombat.h">
+    <ClInclude Include="include\typeText.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
